@@ -1,0 +1,58 @@
+
+body {
+    background: whitesmoke;
+    padding: 20px;
+  
+}
+
+#form-date {
+    background: white;
+    width: 30em;
+    height:35em ;
+    border-bottom-right-radius: 100px;
+    padding: 15px;
+    
+}
+.main{
+    display: flex;
+    color: rgb(147, 145, 145);
+    gap: 2em;
+    margin: 10px;
+
+}
+
+.line{
+    
+    width: 80%;
+    border: 1px solid rgb(147, 145, 145);
+    margin: 70px;
+    
+}
+
+.icon{
+    color: white;
+    font-size: 4em;
+}
+
+#btn{
+    border:none;
+    border-radius: 100%;
+    height: 13%;
+    width: 15%;
+    background-color: rgb(122, 42, 197);
+    margin: -8em 15em -10em 15em;
+    display: block;
+    padding: 10px 10px;
+    
+}
+input{
+    width: 4em;
+    height: 2em;
+    border-radius: 10px;
+    color: rgb(6, 6, 6);
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    border: 0.02px  rgb(126, 125, 125) groove;
+    
+}

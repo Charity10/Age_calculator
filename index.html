@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <form  id="form-date" onsubmit="return dateValidation()" >
+        <div class="main">  <label for="day">
+        DAY
+        <input type="number" id="day" required />
+    </label>
+    <label for="month">
+        MONTH
+        <input type="number" id="month"  required/>
+    </label>
+    <label for="year">
+        YEAR
+        <input type="number" id="year" required/>
+    </label>
+   
+</div>
+  
+<div class="line"></div>
+
+  
+    <button type="submit" id="btn"> <span class="icon">
+        <ion-icon name="arrow-down-outline"></ion-icon>
+    </span> </button>
+
+    <span id="years"> </span>
+    <span id="months"></span>
+    <span id="days"></span>
+    </form>
+
+    <script src="index.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule  src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
