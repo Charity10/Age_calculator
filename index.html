@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <form  id="form-date" onsubmit="return dateValidation()" >
+    <form  id="form-date"  >
         <div class="main">  <label for="day">
         DAY
         <input type="number" id="day" required />
@@ -30,10 +30,13 @@
     <button type="submit" id="btn"> <span class="icon">
         <ion-icon name="arrow-down-outline"></ion-icon>
     </span> </button>
-
-    <span id="years"> </span>
-    <span id="months"></span>
-    <span id="days"></span>
+    
+    <div class="result">
+     <span id="years"> <label for="yeer" id="yearNum">--</label>years </span>
+    <span id="months"><label for="month" id="monthNum">--</label>months</span>
+     <span id="days"><label for="day" id="dayNum">--</label>days</span>
+</div>
+    
     </form>
 
     <script src="index.js"></script>
