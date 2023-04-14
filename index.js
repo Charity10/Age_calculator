@@ -70,44 +70,16 @@ const dateValidation = () => {
       }
 }
 
-calBtn.addEventListener('submit', (event) =>{
+calBtn.addEventListener('click', (event) =>{
   event.preventDefault();
    
   
   dateValidation()
+  calBtn.disabled = true
 
 
-// const ageCalculator = () => {
-     
-    // if(currentDay < birthDay.value){
-    // dayValue.innerHTML = ((currentDay - birthDay.value) + 30)
-    //   Display_days.innerHTML =  'Days'
 
-    // } else if(currentDay > birthDay.value) {
-        
-    //    dayValue.innerHTML = currentDay - birthDay.value
-
-    //      Display_days.innerHTML = ' Days'
-    // }
-
-    // if(currentMonth < birthMonth.value){
-
-    //   monthValue.innerHTML = ((currentMonth - birthMonth.value) + 12)
-        
-    //    Display_month.innerHTML = 'Month' ;
-    //    currentYear = currentYear - 1
-
-    //  } else if(currentMonth > birthMonth.value) {
-       
-    //   monthValue.innerHTML = currentMonth - birthMonth.value
-    //       Display_month.innerHTML =  'Months';
-    //  }
-    
-    //   yearValue.innerHTML = (currentYear - birthYear.value) 
-    
-    //  Display_year.innerHTML =  'Years'
-}  
-)
+})
 
 
 
