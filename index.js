@@ -22,54 +22,60 @@ let currentYear = today.getFullYear();
 
 
 const dateValidation = () => {
+        
         if (birthYear.value > currentYear){
             alert('Future year not allowed')
             
+          } else if (birthDay.value === 31 && (birthMonth.value === 4 || birthMonth.value === 6 || birthMonth.value === 9 || birthMonth.value === 11 ) ){
+          alert('Birth month has 30 days')
+
         } else if (birthMonth.value > 12 || birthMonth.value < 1){
 
             alert("Birth Month must be between 1 - 12")
         
        } else if (birthDay.value > 31 || birthDay.value < 1){
 
-        alert("Birth Day must be between 1 - 31")
+               alert("Birth Day must be between 1 - 31")
 
-      } else  {
+      }  else  {
 
         if (currentDay < birthDay.value){
 
            dayNum.innerHTML = ((currentDay - birthDay.value) + 30)
-            Display_days.innerHTML +=' Days'
+            // Display_days.innerHTML +=' Days'
       
           } else if(currentDay > birthDay.value){
               
               dayNum.innerHTML = currentDay - birthDay.value
       
-              Display_days.innerHTML += ' Days'
+              // Display_days.innerHTML += ' Days'
           }
       
           if(currentMonth < birthMonth.value){
       
             monthNum.innerHTML = ((currentMonth - birthMonth.value) + 12) 
               
-            Display_month.innerHTML += 'Month' ;
+            // Display_month.innerHTML += 'Month' ;
             currentYear = currentYear - 1
       
            } else if(currentMonth > birthMonth.value) {
              
               monthNum.innerHTML =  (currentMonth - birthMonth.value)
-              Display_month.innerHTML  +=  'Months';
-           }
+              // Display_month.innerHTML  +=  'Months';
+           } 
           
             yearNum.innerHTML = (currentYear - birthYear.value) 
           
-            Display_year.innerHTML += 'Years'
+            // Display_year.innerHTML += 'Years'
       }
 }
 
-calBtn.addEventListener('click', (event) =>{
+calBtn.addEventListener('submit', (event) =>{
   event.preventDefault();
+   
   
-dateValidation()
+  dateValidation()
+
 
 // const ageCalculator = () => {
      
