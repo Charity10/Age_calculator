@@ -21,23 +21,30 @@ let currentMonth = today.getMonth();
 let currentYear = today.getFullYear();
 
 
+
+
 const dateValidation = () => {
+
+     const futureYear = () => {
+        raiseError('Future year not allowed')
+     }
+     
         
         if (birthYear.value > currentYear){
             alert('Future year not allowed')
-            
-          } else if (birthDay.value === 31 && (birthMonth.value === 4 || birthMonth.value === 6 || birthMonth.value === 9 || birthMonth.value === 11 ) ){
-          alert('Birth month has 30 days')
-
+    
         } else if (birthMonth.value > 12 || birthMonth.value < 1){
-
             alert("Birth Month must be between 1 - 12")
         
+       } else if (birthDay.value > 30 && (birthMonth.value == 4  || birthMonth.value == 6 || birthMonth.value == 9 || birthMonth.value == 11)) {
+        alert('Birth Month has 30 days');
        } else if (birthDay.value > 31 || birthDay.value < 1){
 
                alert("Birth Day must be between 1 - 31")
-
-      }  else  {
+      }  else if (birthDay.value > 28 && birthMonth.value == 2) {
+             alert('Birth Month has 28 days')
+      }
+      else  {
 
         if (currentDay < birthDay.value){
 
@@ -73,6 +80,8 @@ const dateValidation = () => {
 calBtn.addEventListener('click', (event) =>{
   event.preventDefault();
    
+
+
   
   dateValidation()
   calBtn.disabled = true
