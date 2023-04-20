@@ -26,7 +26,9 @@ let currentYear = today.getFullYear();
 
 
 const dateValidation = () => {
-     
+   dayError.textContent = ''
+   monthError.textContent = ''
+   yearError.textContent = ''
         
       if (birthYear.value > currentYear){
             yearError.textContent = "Please enter a valid Year"
@@ -54,9 +56,7 @@ const dateValidation = () => {
             }
       
       else  {
-         dayError.textContent = ''
-         monthError.textContent = ''
-         yearError.textContent = ''
+         
          
                if (currentDay < birthDay.value){
 
