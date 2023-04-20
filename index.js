@@ -1,4 +1,6 @@
-const ageForm = document.getElementById("form-date");
+const dayError = document.getElementById("day-error");
+const yearError = document.getElementById("year-error");
+const monthError = document.getElementById("month-error");
 const birthDay = document.getElementById("day");
 const birthMonth = document.getElementById("month");
 const birthYear = document.getElementById("year");
@@ -24,71 +26,79 @@ let currentYear = today.getFullYear();
 
 
 const dateValidation = () => {
-
-     const futureYear = () => {
-        raiseError('Future year not allowed')
-     }
      
         
-        if (birthYear.value > currentYear){
-            alert('Future year not allowed')
+      if (birthYear.value > currentYear){
+            yearError.textContent = "Please enter a valid Year"
+            yearError.style.color = "red"
+         }
     
-        } else if (birthMonth.value > 12 || birthMonth.value < 1){
-            alert("Birth Month must be between 1 - 12")
+      else if (birthMonth.value > 12 || birthMonth.value < 1){
+         monthError.textContent = "Please enter a valid month"
+         monthError.style.color = "red"
+         }
         
-       } else if (birthDay.value > 30 && (birthMonth.value == 4  || birthMonth.value == 6 || birthMonth.value == 9 || birthMonth.value == 11)) {
-        alert('Birth Month has 30 days');
-       } else if (birthDay.value > 31 || birthDay.value < 1){
-
-               alert("Birth Day must be between 1 - 31")
-      }  else if (birthDay.value > 28 && birthMonth.value == 2) {
-             alert('Birth Month has 28 days')
+      else if (birthDay.value > 30 && (birthMonth.value == 4  || birthMonth.value == 6 || birthMonth.value == 9 || birthMonth.value == 11)) {
+         dayError.textContent = "Birth Month has 30 days"
+         dayError.style.color = "red"
       }
+
+      else if (birthDay.value > 31 || birthDay.value < 1){
+         dayError.textContent = "Birth Day must be between 1 - 31"
+         dayError.style.color = "red"
+            }
+
+      else if (birthDay.value > 28 && birthMonth.value == 2) {
+         dayError.textContent = "Birth Month has 28 days"
+         dayError.style.color = "red"
+            }
+      
       else  {
+         dayError.textContent = ''
+         monthError.textContent = ''
+         yearError.textContent = ''
+         
+               if (currentDay < birthDay.value){
 
-        if (currentDay < birthDay.value){
+               dayNum.innerHTML = ((currentDay - birthDay.value) + 30)
+                  // Display_days.innerHTML +=' Days'
 
-           dayNum.innerHTML = ((currentDay - birthDay.value) + 30)
-            // Display_days.innerHTML +=' Days'
-      
-          } else if(currentDay > birthDay.value){
-              
-              dayNum.innerHTML = currentDay - birthDay.value
-      
-              // Display_days.innerHTML += ' Days'
-          }
-      
-          if(currentMonth < birthMonth.value){
-      
-            monthNum.innerHTML = ((currentMonth - birthMonth.value) + 12) 
-              
-            // Display_month.innerHTML += 'Month' ;
-            currentYear = currentYear - 1
-      
-           } else if(currentMonth > birthMonth.value) {
-             
-              monthNum.innerHTML =  (currentMonth - birthMonth.value)
-              // Display_month.innerHTML  +=  'Months';
-           } 
-          
-            yearNum.innerHTML = (currentYear - birthYear.value) 
-          
-            // Display_year.innerHTML += 'Years'
-      }
-}
+               } else if(currentDay > birthDay.value){
+                  
+                  dayNum.innerHTML = currentDay - birthDay.value
+                  // Display_days.innerHTML += ' Days'
+               }
+
+               if(currentMonth > birthMonth.value){
+                  monthNum.innerHTML =  (currentMonth - birthMonth.value)
+               // Display_month.innerHTML  +=  'Months';
+
+               } else if(currentMonth < birthMonth.value) {
+                  
+                  
+                  monthNum.innerHTML = ((currentMonth - birthMonth.value) + 12) 
+                  
+                  // Display_month.innerHTML += 'Month' ;
+                  currentYear = currentYear - 1
+                 
+               } 
+
+               yearNum.innerHTML = (currentYear - birthYear.value) 
+
+               currentYear += 1
+                  }
+
+               }
+
+
 
 calBtn.addEventListener('click', (event) =>{
   event.preventDefault();
-   
 
+       dateValidation()
 
   
-  dateValidation()
-  calBtn.disabled = true
-
-
-
+    // Display_year.innerHTML += 'Years'
 })
-
 
 

@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <form  id="form-date"  >
+    <form  id="form-date"  action="/" method="get" >
         <div class="main">  <label for="day">
         DAY
         <input type="number" id="day" required />
+        <span id="day-error"></span>
     </label>
     <label for="month">
         MONTH
         <input type="number" id="month"  required/>
+        <span id="month-error"></span>
     </label>
     <label for="year">
         YEAR
         <input type="number" id="year" required/>
+        <span id="year-error"></span>
     </label>
    
 </div>
@@ -27,7 +30,7 @@
 <div class="line"></div>
 
   
-    <button type="submit" id="btn"> <span class="icon">
+    <button type="submit" id="btn"> <span class="icon" onclick="dateValidation()">
         <ion-icon name="arrow-down-outline"></ion-icon>
     </span> </button>
     
