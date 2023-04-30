@@ -3,29 +3,28 @@
 }
 body {
     background: whitesmoke;
-    margin: 20px;
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;  
 }
 
 #form-date {
     background: white;
-    width: 35em;
-    height:45em ;
+    width: 30em;
+    height:40em ;
     border-bottom-right-radius: 120px;
     border-bottom-left-radius: 20px;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-    padding: 10px;
     margin-top: 10px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
-    
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; 
 }
+
 .main{
     display: flex;
     color: rgb(147, 145, 145);
     font-weight: bold;
-    padding: 10px;
+    margin-bottom: 2px;
   
 }
 
@@ -34,7 +33,7 @@ body {
     
     width: 90%;
     border: 0.5px solid rgb(205, 203, 203);
-    margin: 70px 15px;
+    margin: 1px 10px;
 }
 
 label{
@@ -44,23 +43,26 @@ label{
 
 .icon{
     color: white;
-    font-size: 4.5em;
+    font-size: 4em;
+    margin-left: -0.1em;
+    
 }
 
 #btn{
-    border:none;
+    border: none;
     border-radius: 100%;
-    height: 12%;
-    width: 15%;
+    height: 5em;
+    width: 5em;
     background-color: rgb(122, 42, 197);
-    margin: -9em 15em -10em 18em;
+    margin: -2.5em 4em 0em 12em;
     display: block;
-    padding: 10px 10px;
-    
+    padding: 10px;
 }
+
 input{
-    width: 4em;
+    width: 3em;
     height: 2em;
+    display: grid;
     text-align: center;
     border-radius: 10px;
     color: rgb(6, 6, 6);
@@ -80,4 +82,54 @@ input{
 }
 label#yearNum, label#dayNum, label#monthNum{
     color: rgb(122, 42, 197);
+}
+
+/* @media  screen and (max-width: 400px ){
+    #form-date {
+        width: 100em;
+        height:45em;
+        padding: 10px;
+    }
+    
+    .main{
+        padding: 10px;
+        margin-top: 30px;
+    }
+} */
+
+
+@media  screen and (min-width: 600px ) {
+    
+    #form-date {
+        width: 55em;
+        height:45em;
+        padding: 10px;
+    }
+    
+    .main{
+        padding: 10px;
+        margin-top: 30px;
+    }
+    
+    .icon{
+        color: white;
+        font-size: 4em;
+        margin-left: -0.1em;
+    }
+    
+    #btn{
+        margin: -4em 0em -2em 60em;
+        
+        
+    }
+    input{
+        width: 4.5em;
+        margin-bottom: 10px;
+    }
+    
+    .result{
+        font-weight: bold;
+        font-size: 6rem;
+        margin:1.5em 2em 3em .3em;    
+    }
 }
